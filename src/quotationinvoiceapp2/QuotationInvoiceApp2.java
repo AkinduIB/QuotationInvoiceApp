@@ -10,11 +10,21 @@ package quotationinvoiceapp2;
  */
 public class QuotationInvoiceApp2 {
 
-    /**
-     * @param args the command line arguments
-     */
+       
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Set the look and feel to the system default, optional
+        try {
+            javax.swing.UIManager.setLookAndFeel(javax.swing.UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        // Create and display the AppFront JFrame
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new AppFront().setVisible(true);
+            }
+        });
     }
-    
 }
+
