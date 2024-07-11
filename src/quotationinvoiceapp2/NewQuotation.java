@@ -192,7 +192,7 @@ public class NewQuotation extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel6.setText("Date :");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
 
         btnClose.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnClose.setText("Close");
@@ -480,6 +480,23 @@ public class NewQuotation extends javax.swing.JFrame {
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
         // TODO add your handling code here:
+         String clientData = jTextArea1.getText().replace("\n", "\n");
+
+    // Get formatted date
+    String formattedDate = jLabel7.getText();
+
+    // Specify the path where you want to save the PDF file
+    String filePath = "E:/" + jTextField1.getText().trim() + ".pdf";
+
+    // Get the content from jTextArea3
+    String content = jTextArea3.getText();
+
+    // Generate the PDF
+    String topic = "Quotation";
+    printQuotation.generatePDF(filePath, clientData, formattedDate, content, topic);
+
+    JOptionPane.showMessageDialog(this, "PDF created successfully at: " + filePath, "Success", JOptionPane.INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_btnPrintActionPerformed
 
     /**
